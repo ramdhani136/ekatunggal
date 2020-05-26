@@ -6,6 +6,6 @@
     <title>Ekatunggal Group</title>
 </head>
 <body>
-    
+    <h1>Selamat Datang Di Ekatunggal</h1>
 </body>
 </html>
