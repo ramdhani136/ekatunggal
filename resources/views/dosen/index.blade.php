@@ -11,14 +11,17 @@
 
     <table border="1">
         <tr>
+            <th>No</th>
             <th>Nama</th>
             <th>Umur</th>
             <th>Jabatan</th>
             <th>Alamat</th>
             <th>Aksi</th>
         </tr>
+        @php $no=1; @endphp
         @foreach($data as $a)
         <tr>
+            <td>{{$no++}}</td>
             <td>{{$a->nama}}</td>
             <td>{{$a->umur}}</td>
             <td>{{$a->jabatan}}</td>
