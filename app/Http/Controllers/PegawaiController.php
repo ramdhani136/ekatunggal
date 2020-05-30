@@ -31,4 +31,21 @@ class PegawaiController extends Controller
         $ambil = DB::table('pegawai')->where('id',$id)->get();
         return view('edit',['ambil'=>$ambil]);
     }
+
+    public function update(Request $request){
+        DB::table('pegawai')->where('id',$request->id)->update([
+            'nama' => $request->nama,
+            'umur' => $request->umur,
+            'jabatan' => $request->jabatan,
+            'alamat' => $request->alamat
+        ]);
+        
+        return redirect('/');
+    }
+
+    public function hapus($id){
+        DB::table('pegawai')->where('id',$id)->delete();
+        return redirect('/');
+    }
+
 }

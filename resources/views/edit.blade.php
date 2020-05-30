@@ -14,7 +14,7 @@
         umur : <input type="number" name="umur" value="{{$p->umur}}"><br>
         jabatan : <input type="text" name="jabatan" value="{{$p->jabatan}}"><br>
         Alamat :<textarea name="alamat" cols="30" rows="10">{{$p->alamat}}</textarea><br>
-        <button type="submit" name="simpan" value="Simpan">Simpan</button>
+        <button type="submit" name="simpan" value="Simpan">Update</button>
     </form>
     @endforeach
 </body>

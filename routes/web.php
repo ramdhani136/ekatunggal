@@ -17,3 +17,5 @@ Route::get('/','pegawaiController@index');
 Route::get('/tambah','pegawaiController@tambah');
 Route::post('/store','pegawaiController@store');
 Route::get('/edit/{id}','pegawaiController@edit');
+Route::post('update','pegawaiController@update');
+Route::get('/hapus/{id}','pegawaiController@hapus');
