@@ -3,31 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latihan CRUD</title>
+    <title>Data Pegawai</title>
 </head>
 <body>
 
-    <a href="pegawai/tambah">+ Tambah Pegawai Baru</a>
-    <br>
-    <br>
+    <a href="/tambah">+ Tambah Pegawai</a><br><br>
 
-    <table border="1px">
+    <table border="1">
         <tr>
             <th>Nama</th>
-            <th>Jabatan</th>
             <th>Umur</th>
+            <th>Jabatan</th>
             <th>Alamat</th>
-            <th>Action</th>
+            <th>Aksi</th>
         </tr>
-        @foreach($pegawai as $a)
+        @foreach($data as $a)
         <tr>
-            <td>{{ $a->nama }}</td>
-            <td>{{ $a->jabatan }}</td>
-            <td>{{ $a->umur }}</td>
-            <td>{{ $a->alamat }}</td>
+            <td>{{$a->nama}}</td>
+            <td>{{$a->umur}}</td>
+            <td>{{$a->jabatan}}</td>
+            <td>{{$a->alamat}}</td>
             <td>
-            <a href="pegawai/edit">Edit</a>  | 
-            <a href="pegawai/hapus"> Hapus</a>
+            <a href="/edit/{{$a->id}}">Edit</a>  
+            | 
+            <a href="/hapus">Hapus</a> 
             </td>
         </tr>
         @endforeach

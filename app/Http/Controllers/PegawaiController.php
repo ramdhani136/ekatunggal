@@ -7,26 +7,9 @@ Use Illuminate\Support\Facades\DB;
 
 class PegawaiController extends Controller
 {
-
-    public function tes(){
-        $nama =  "ilham Ramdhani";
-        $job = ["It Support","Programmer","Manager"];
-        return view('pegawai',['nama'=>$nama,'job'=>$job]);
-    }
-
-    public function formulir(){
-        return view('formulir');
-    }
-
-    public function proses(Request $request){
-        $nama=$request->input('nama');
-        $alamat=$request->input('alamat');
-        return "Nama saya ".$nama.", Saya Tinggal di ".$alamat;
-    }
-
     public function index(){
-        $pegawai = DB::table('pegawai')->get();
-        return view('index',['pegawai'=>$pegawai]);
+        $data = DB::table('pegawai')->get();
+        return view('index',['data'=>$data]);
     }
 
     public function tambah(){
@@ -35,13 +18,17 @@ class PegawaiController extends Controller
 
     public function store(Request $request){
         DB::table('pegawai')->insert([
-            'nama' => $request->nama,
-            'jabatan' => $request->jabatan,
-            'umur' => $request->umur,
-            'alamat' => $request->alamat
+            'nama'=>$request->nama,
+            'umur'=>$request->umur,
+            'jabatan'=>$request->jabatan,
+            'alamat'=>$request->alamat
         ]);
 
-        return redirect('/pegawai');
-        
+        return redirect('/');
+    }
+
+    public function edit($id){
+        $ambil = DB::table('pegawai')->where('id',$id)->get();
+        return view('edit',['ambil'=>$ambil]);
     }
 }

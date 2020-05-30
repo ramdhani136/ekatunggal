@@ -6,17 +6,13 @@
     <title>Tambah Pegawai</title>
 </head>
 <body>
-    <a href="/pegawai">Kembali</a>
-    <br>
-    <br>
-
-    <form action="/pegawai/store" method="post">
+    <form action="/store" method="post">
         {{csrf_field()}}
-        nama : <input type="text" name="nama" ><br>
-        jabatan : <input type="text" name="jabatan" ><br>
-        umur : <input type="number" name="umur" ><br>
-        Alamat : <textarea name="alamat" cols="30" rows="10"></textarea><br>
-        <input type="submit" value="Tambah">
+        Nama : <input type="text" name="nama"><br>
+        umur : <input type="number" name="umur"><br>
+        jabatan : <input type="text" name="jabatan"><br>
+        Alamat :<textarea name="alamat" cols="30" rows="10"></textarea><br>
+        <button type="submit" name="simpan" value="Simpan">Simpan</button>
     </form>
 </body>
 </html>

@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','PegawaiController@tes');
-Route::get('formulir','PegawaiController@formulir');
-Route::post('formulir/proses','pegawaiController@proses');
-Route::get('/pegawai','PegawaiController@index');
-Route::get('/pegawai/tambah','PegawaiController@tambah');
-Route::post('/pegawai/store','PegawaiController@store');
+Route::get('/','pegawaiController@index');
+Route::get('/tambah','pegawaiController@tambah');
+Route::post('/store','pegawaiController@store');
+Route::get('/edit/{id}','pegawaiController@edit');
