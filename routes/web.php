@@ -40,5 +40,7 @@ Route::get('/barang/hapus/{id}','barangController@destroy');
 Route::get('/barang/cari','barangController@cari');
 
 Route::get('/mahasiswa','mahasiswaController@index');
+Route::get('/mahasiswa/tambah','mahasiswaController@create');
+Route::post('/mahasiswa/store','mahasiswaController@store');
 
 

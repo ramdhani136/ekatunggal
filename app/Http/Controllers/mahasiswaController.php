@@ -25,7 +25,7 @@ class mahasiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('mahasiswa.form');
     }
 
     /**
@@ -36,7 +36,17 @@ class mahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nama'=>'required',
+            'alamat'=>'required'
+        ]);
+
+        Mahasiswa::create([
+            'nama'=>$request->nama,
+            'alamat'=>$request->alamat,
+        ]);
+
+        return redirect('/mahasiswa');
     }
 
     /**
