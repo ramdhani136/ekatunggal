@@ -39,4 +39,6 @@ Route::post('/barang/update','barangController@update');
 Route::get('/barang/hapus/{id}','barangController@destroy');
 Route::get('/barang/cari','barangController@cari');
 
+Route::get('/mahasiswa','mahasiswaController@index');
+
 
