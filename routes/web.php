@@ -31,3 +31,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/barang','barangController@index');
+Route::get('/barang/tambah','barangController@create');
+Route::post('/barang/store','barangController@store');
+Route::get('/barang/edit/{id}','barangController@edit');
+Route::post('/barang/update','barangController@update');
+Route::get('/barang/hapus/{id}','barangController@destroy');
+Route::get('/barang/cari','barangController@cari');
+
+
