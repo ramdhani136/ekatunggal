@@ -14,7 +14,7 @@ class dosenController extends Controller
      */
     public function index()
     {
-        $data = DB::table('pegawai')->get();
+        $data = DB::table('pegawai')->paginate(10);
         return view('dosen.index',['data'=>$data]);
     }
 

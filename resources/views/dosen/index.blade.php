@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Dosen</title>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
 </head>
 <body>
+
+    <style type="text/css">
+        .pagination li{
+            float:left;
+            list-style:none;
+            margin:5px;x
+        }
+    </style>
 
     <a href="/dosen/create">+ Tambah Dosen</a><br><br>
 
@@ -32,6 +41,13 @@
             </td>
         </tr>
         @endforeach
-    </table>
+    </table><br><br>
+    Halaman : {{$data->currentPage()}}    <br>
+    Jumlah Data :  {{$data->total()}}  <br>
+    Data Per halaman : {{$data->perPage()}} <br><br>
+
+    {{$data->links()}}
+
+
 </body>
 </html>
