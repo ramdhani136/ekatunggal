@@ -99,4 +99,12 @@ class dosenController extends Controller
         DB::table('pegawai')->where('id',$id)->delete();
         return redirect('/dosen');
     }
+
+    public function cari(Request $request){
+        $cari = $request->cari;
+        $dapat = DB::table('pegawai')->where('nama','like',"%".$cari."%")
+        ->paginate();
+        return view('dosen.index',['data'=>$dapat]);
+    }
+
 }

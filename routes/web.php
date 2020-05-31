@@ -26,6 +26,8 @@ Route::post('/dosen/store','dosenController@store');
 Route::get('/dosen/edit/{id}','dosenController@edit');
 Route::post('dosen/update','dosenController@update');
 Route::get('/dosen/hapus/{id}','dosenController@destroy');
+Route::get('/dosen/cari','dosenController@cari');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

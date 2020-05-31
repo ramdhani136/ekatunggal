@@ -15,6 +15,12 @@
             margin:5px;x
         }
     </style>
+    
+    <p>Cari Data Pegawai :</p>
+	<form action="/dosen/cari" method="GET">
+		<input type="text" name="cari" placeholder="Cari Pegawai .." >
+		<input type="submit" value="CARI">
+	</form>
 
     <a href="/dosen/create">+ Tambah Dosen</a><br><br>
 
