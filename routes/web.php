@@ -42,5 +42,9 @@ Route::get('/barang/cari','barangController@cari');
 Route::get('/mahasiswa','mahasiswaController@index');
 Route::get('/mahasiswa/tambah','mahasiswaController@create');
 Route::post('/mahasiswa/store','mahasiswaController@store');
+Route::get('/mahasiswa/edit/{id}','mahasiswaController@edit');
+Route::put('/mahasiswa/update/{id}','mahasiswaController@update');
+Route::get('/mahasiswa/hapus/{id}','mahasiswaController@destroy');
+
 
 

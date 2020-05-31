@@ -68,7 +68,8 @@ class mahasiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ambil = Mahasiswa::where('id',$id)->get();
+        return view('mahasiswa.edit',['data'=>$ambil]);
     }
 
     /**
@@ -80,7 +81,17 @@ class mahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'nama'=>'required',
+            'alamat'=>'required',
+        ]);
+
+        Mahasiswa::find($id)->update([
+            'nama'=>$request->nama,
+            'alamat'=>$request->alamat,
+        ]);
+
+        return redirect('/mahasiswa');
     }
 
     /**
@@ -91,6 +102,7 @@ class mahasiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Mahasiswa::find($id)->delete();
+        return redirect('/mahasiswa');
     }
 }

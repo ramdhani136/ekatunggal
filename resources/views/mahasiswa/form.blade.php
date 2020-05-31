@@ -9,7 +9,18 @@
     <form action="/mahasiswa/store" method="post">
         {{csrf_field()}}
         nama : <input type="text" name="nama" id=""><br>
+        @if($errors->has('nama'))
+            <div class="nama">
+                {{$errors->first('nama')}}
+            </div>
+        @endif
         alamat : <input type="text" name="alamat" id=""><br>
+        @if($errors->has('alamat'))
+            <div class="alamat">
+                {{$errors->first('alamat')}}
+            </div>
+        @endif
+
         <input type="submit" value="Tambah">
     </form>
 </body>
