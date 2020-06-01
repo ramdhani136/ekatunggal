@@ -11,12 +11,14 @@
         <tr>
             <th>Nama</th>
             <th>Nomor Telepon</th>
+            <th>Jurusan</th>
             <th>Aksi</th>
         </tr>
         @foreach($data as $r)
         <tr>
             <td>{{$r->nama}}</td>
             <td>{{$r->telepon->hp}}</td>
+            <td>{{$r->jurusan->jurusan}}</td>
             <td>Edit | Hapus</td>
         </tr>
         @endforeach

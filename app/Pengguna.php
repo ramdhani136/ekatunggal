@@ -12,4 +12,8 @@ class Pengguna extends Model
         return $this->hasOne('App\Telepon');
     }
 
+    public function jurusan(){
+        return $this->hasOne('App\Jurusan');
+    }
+
 }
