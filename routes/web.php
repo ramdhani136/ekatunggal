@@ -46,5 +46,8 @@ Route::get('/mahasiswa/edit/{id}','mahasiswaController@edit');
 Route::put('/mahasiswa/update/{id}','mahasiswaController@update');
 Route::get('/mahasiswa/hapus/{id}','mahasiswaController@destroy');
 
+Route::get('/guru','guruController@index');
+Route::get('/guru/hapus/{id}','guruController@destroy');
+
 
 

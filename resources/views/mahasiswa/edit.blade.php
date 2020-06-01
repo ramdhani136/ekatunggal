@@ -13,7 +13,7 @@
         {{method_field('PUT')}}
         nama : <input type="text" name="nama" value="{{$r->nama}}"><br>
         alamat : <input type="text" name="alamat" value="{{$r->alamat}}"><br>
-        <input type="submit" value="Tambah">
+        <input type="submit" value="Update">
     </form>
     @endforeach
 </body>
