@@ -53,5 +53,7 @@ Route::post('/guru/store','guruController@store');
 Route::get('/guru/edit/{id}','guruController@edit');
 Route::put('/guru/update/{id}','guruController@update');
 
+Route::get('/pengguna','penggunaController@index');
+
 
 
