@@ -25,7 +25,7 @@ class guruController extends Controller
      */
     public function create()
     {
-        //
+        return view('guru.form');
     }
 
     /**
@@ -36,7 +36,17 @@ class guruController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nama'=>'required',
+            'umur'=>'required'
+        ]);
+
+        Guru::create([
+            'nama'=>$request->nama,
+            'umur'=>$request->umur
+        ]);
+
+        return redirect('/guru');
     }
 
     /**
@@ -58,8 +68,10 @@ class guruController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ambil = Guru::where('id',$id)->get();
+        return view('guru.edit',['data'=>$ambil]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -70,7 +82,23 @@ class guruController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request,[
+            'nama'=>'required',
+            'umur'=>'required'
+        ]);
+
+    $this->validate($request,[
+            'nama'=>'required',
+            'umur'=>'required'
+        ]);
+
+        Guru::find($id)->update([
+            'nama'=>$request->nama,
+            'umur'=>$request->umur
+        ]);
+
+        return redirect('/guru');
     }
 
     /**

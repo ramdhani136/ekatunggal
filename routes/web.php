@@ -47,7 +47,11 @@ Route::put('/mahasiswa/update/{id}','mahasiswaController@update');
 Route::get('/mahasiswa/hapus/{id}','mahasiswaController@destroy');
 
 Route::get('/guru','guruController@index');
+Route::get('/guru/tambah','guruController@create');
 Route::get('/guru/hapus/{id}','guruController@destroy');
+Route::post('/guru/store','guruController@store');
+Route::get('/guru/edit/{id}','guruController@edit');
+Route::put('/guru/update/{id}','guruController@update');
 
 
 
