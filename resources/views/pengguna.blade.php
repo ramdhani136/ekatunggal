@@ -14,7 +14,7 @@
             <th>Jurusan</th>
             <th>Aksi</th>
         </tr>
-        @foreach($data as $r)
+        @foreach($data2 as $r)
         <tr>
             <td>{{$r->nama}}</td>
             <td>{{$r->telepon->hp}}</td>

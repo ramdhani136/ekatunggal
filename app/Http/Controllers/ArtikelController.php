@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Pengguna;
+use App\Articles;
 
-class penggunaController extends Controller
+class ArtikelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class penggunaController extends Controller
      */
     public function index()
     {
-        $tampil = Pengguna::all();
-        $tampil2 = Pengguna::paginate(1);
-        return view('pengguna',['data'=>$tampil,'data2'=>$tampil2]);
+        $tampil = Articles::all();
+        return view('artikel',['data'=>$tampil]);
     }
 
     /**

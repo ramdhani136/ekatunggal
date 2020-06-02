@@ -15,5 +15,4 @@ class Pengguna extends Model
     public function jurusan(){
         return $this->hasOne('App\Jurusan');
     }
-
 }

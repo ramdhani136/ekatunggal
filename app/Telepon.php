@@ -11,5 +11,6 @@ class Telepon extends Model
     public function pengguna(){
         return $this->belongsTo('App\Pengguna');
     }
-    
 }
+
+

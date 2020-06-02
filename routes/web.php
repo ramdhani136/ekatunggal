@@ -55,5 +55,5 @@ Route::put('/guru/update/{id}','guruController@update');
 
 Route::get('/pengguna','penggunaController@index');
 
-
+Route::get('/artikel','ArtikelController@index');
 
