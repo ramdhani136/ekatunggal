@@ -58,3 +58,14 @@ Route::get('/pengguna','penggunaController@index');
 Route::get('/artikel','ArtikelController@index');   
 Route::get('/anggota','AnggotaController@index');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/gambar','UploadController@index');
+Route::post('/gambar/proses','UploadController@proses');
