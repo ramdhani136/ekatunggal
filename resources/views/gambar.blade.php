@@ -26,7 +26,7 @@
 
 					<div class="form-group">
 						<b>File Gambar</b><br/>
-						<input type="file" name="nama">
+						<input type="file" name="file">
 					</div>
 
 					<div class="form-group">

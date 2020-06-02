@@ -13,28 +13,21 @@ class UploadController extends Controller
 	}
 
     public function proses(Request $request){
-        $this->validate($request, [
-            'nama' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
-            'keterangan' => 'required',
+        $this->validate($request,[
+            'file'=>'required',
+            'keterangan'=>'required',
         ]);
-     
-        // menyimpan data file yang diupload ke variabel $file
-        $file = $request->file('nama');
-     
-        $nama_file = time()."_".$file->getClientOriginalName();
-     
-              // isi dengan nama folder tempat kemana file diupload
-        $tujuan_upload = 'data_file';
-        $file->move($tujuan_upload,$nama_file);
-     
-     
+
+        $file = $request->file('file');
+        $namafile = time()."_".$file->getClientOriginalName();
+        $lokasi = 'data_file';
+        $file->move($lokasi,$namafile);
+
         Gambar::create([
-			'nama' => $nama_file,
-			'keterangan' => $request->keterangan,
-		]);
- 
-     
+            'nama'=>$namafile,
+            'keterangan'=>$request->keterangan,
+        ]);
+
         return redirect()->back();
-        
     }
 }
