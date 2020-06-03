@@ -69,3 +69,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/gambar','UploadController@index');
 Route::post('/gambar/proses','UploadController@proses');
+Route::get('/gambar/hapus/{id}','UploadController@destroy');
+Route::get('/upload','CobaController@index');
+Route::post('upload/proses','CobaController@proses');

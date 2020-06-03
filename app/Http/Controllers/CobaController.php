@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Gambar;
 use File;
 
-class UploadController extends Controller
+class CobaController extends Controller
 {
     public function index(){
 		$gambar = Gambar::all();
